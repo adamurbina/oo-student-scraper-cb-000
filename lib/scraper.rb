@@ -24,7 +24,7 @@ class Scraper
       links = doc.css(".social-icon-container").css("a")
       links.each {|link|
           url = link.attribute("href").value
-          puts url.include?("twitter")
+          #puts url.include?("twitter")
           case true
           when url.include?('twitter')
               puts "twitter: "
