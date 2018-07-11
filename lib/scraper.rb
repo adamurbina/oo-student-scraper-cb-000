@@ -26,7 +26,7 @@ class Scraper
           url = link.attribute("href").value
           puts url.include?("twitter")
           case true
-          when url.include
+          when url.include?('twitter')
               puts "twitter: "
           end
       }
