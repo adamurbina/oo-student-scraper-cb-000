@@ -37,6 +37,8 @@ class Scraper
               new_hash[:blog] = url
           end
       }
+      
+
       puts new_hash
 
   end
