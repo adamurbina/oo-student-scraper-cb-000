@@ -28,7 +28,7 @@ class Scraper
           #puts url.include?("twitter")
           case true
           when url.include?('twitter')
-              puts "twitter: "
+              {}
           end
       }
 
