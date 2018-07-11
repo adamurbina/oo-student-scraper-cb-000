@@ -25,7 +25,7 @@ class Scraper
       links.each {|link|
           url = link.attribute("href").value
           case url
-          when url['twitter']
+          when url.match('twitter')
               puts "twitter: "
           end
       }
