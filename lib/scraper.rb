@@ -33,6 +33,8 @@ class Scraper
               new_hash[:linkedin] = url
           when url.include?('github')
               new_hash[:github] = url
+          when url.include?('flatiron')
+              new_hash[:blog] = url
           end
       }
 
