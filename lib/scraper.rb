@@ -29,6 +29,10 @@ class Scraper
           case true
           when url.include?('twitter')
               new_hash[:twitter] = url
+          when url.include?('linkedin')
+              new_hash[:linkedin] = url
+          when url.include?('github')
+              new_hash[:github] = url
           end
       }
 
