@@ -12,7 +12,7 @@ class Scraper
         new_hash = {}
         new_hash[:name] = student.css(".student-name").text
         new_hash[:location] = student.css(".student-location").text
-        new_hash[:student_url] = student.css("a").attribute("href").value
+        new_hash[:profile_url] = student.css("a").attribute("href").value
 
         student_array << new_hash
     }
