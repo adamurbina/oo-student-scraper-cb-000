@@ -20,7 +20,6 @@ class Student
   def self.create_from_collection(students_array)
       students_array.each{|student|
           student = Student.new(student)
-          student[:name]
       }
   end
 
