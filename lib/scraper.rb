@@ -12,7 +12,7 @@ class Scraper
         new_hash = {}
         new_hash[:name] = student.css(".student-name").text
         new_hash[:location] = student.css(".student-location").text
-        new_hash[:student_url] = student.css("a").attribute("href").value
+        new_hash[:profile_url] = student.css("a").attribute("href").value
 
         student_array << new_hash
     }
@@ -20,9 +20,27 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
+      doc = Nokogiri::HTML(open(profile_url))
+      new_hash = {}
+      links = doc.css(".social-icon-container").css("a")
+      links.each {|link|
+          url = link.attribute("href").value
+          case true
+          when url.include?('twitter')
+              new_hash[:twitter] = url
+          when url.include?('linkedin')
+              new_hash[:linkedin] = url
+          when url.include?('github')
+              new_hash[:github] = url
+          when url.include?('http:')
+              new_hash[:blog] = url
+          end
+      }
+      new_hash[:profile_quote] = doc.css(".profile-quote").text
+      new_hash[:bio] = doc.css(".description-holder").css("p").text.chomp
+
+      return new_hash
 
   end
 
 end
-
-#Scraper.scrape_index_page("./fixtures/student-site/index.html")
