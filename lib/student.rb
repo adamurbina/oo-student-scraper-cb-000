@@ -13,7 +13,7 @@ class Student
     @blog = student_hash[:blog]
     @profile_quote = student_hash[:profile_quote]
     @bio = student_hash[:bio]
-    @profile_quote = student_hash[:profile_quote]
+    @profile_url = student_hash[:profile_url]
 
   end
 
