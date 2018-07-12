@@ -36,10 +36,10 @@ class Scraper
               new_hash[:blog] = url
           end
       }
-      quote = doc.css(".profile_quote").text
-      new_hash[:profile_quote] = quote
+      new_hash[:profile_quote] = doc.css(".profile_quote").text
+      bio = doc.css(".description-holder").css("p").text
 
-      puts new_hash
+      puts bio
 
   end
 
