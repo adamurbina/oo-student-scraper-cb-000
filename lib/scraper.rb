@@ -42,7 +42,7 @@ class Scraper
 
       new_hash[:bio] = doc.css(".description-holder").css("p").text
 
-      puts profile_url
+      puts doc
 
   end
 
